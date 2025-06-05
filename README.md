@@ -1,10 +1,8 @@
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![website](https://img.shields.io/website-up-down-green-red/http/kidsgoserver.com/.svg?label=online-go)](https://kidsgoserver.com/)
+***Coding Challenge***
 
-# KidsGoServer.com source code
+Your non-technical boss has requested a hint feature to be built.  The feature should be done like the Go app "Tsumego Pro". For simplicity,
+the first version of the hint feature can just display the next correct move to the user, instead of also displaying the next wrong move like Tsumego Pro.
 
-This repository contains the source code for web client used by [KidsGoServer.com](https://kidsgoserver.com).
+You may find downloading Tsumego Pro, exploring the website online-go.com, and exploring the submodule online-go.com useful for this feature.
 
-# Contributing
 
-Feel like making some changes? Excellent! See the [Contributing guide](./CONTRIBUTING.md).
