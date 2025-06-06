@@ -14,7 +14,9 @@ If you are stuck and need a hint or want to see a possible solution, navigate to
 
 If you think there are better hints or there are alternative or better solutions, please email me at nharwit@gmail.com
 
+************************
 ***Coding Challenge***
+************************
 
 You've been requested to make a hint feature for the kidsgoserver.com.
 For simplicity, the first version of the hint feature can just display the next correct move(s) to the user.
@@ -22,7 +24,9 @@ You do NOT have to worry about displaying the next wrong move(s) to the user.
 
 You may find exploring the website online-go.com, and the submodule code located within online-go.com useful.
 
-**Requirements**:
+************************
+**Requirements**
+************************
 
 1. Hint button in the bottom left of the screen on desktop
 2. Clicking the hint button shows a green square mark (or another way to indicate a correct move) on the Go board (Goban) where the correct next move(s) should be
@@ -35,7 +39,9 @@ Remember that you do not need to include the red marks for the incorrect next mo
 
 This was a real bug from a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
 
-**Relevant Files/Code**:
+************************
+**Relevant Files/Code**
+************************
 
 The file you'll want to add code to is located at: src/views/Lessons/Puzzles.tsx
 
@@ -56,3 +62,9 @@ move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
 ```
 
 Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com/](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
+
+************************
+***Estimated Time***
+************************
+
+Estimated time for this feature is 2 - 20 hours
