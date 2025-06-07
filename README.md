@@ -2,24 +2,52 @@
 ***Initial Setup***
 *******************
 
-Codesandbox should automatically install the packages and start the dev server.  You'll want to view this website in a separate tab. In the bottom portion, you should see a terminal open.  First, locate the port the server is running on, by clicking "PORTS" which is to the right of "TERMINAL". Locate the port that ends with "18888".  Right click it, and click "Open in Browser" -> Click "Open" to confirm.
+Getting setup locally only takes a few minutes!
 
-If you had any issues, please refer to these detailed instructions with screenshots [here](/CodeSandbox-Instructions.md) 
+1. Clone the repo
+
+```
+git clone https://github.com/ScriabinOp8No12/hint-button-bug-11xdev.git
+```
+
+2. Navigate to the root of the project:
+
+```
+cd hint-button-bug-11xdev
+```
+
+3. Install packages and start the frontend server:
+
+```
+yarn install && npm run dev
+```
+
+4. View the website in your browser
+
+```
+http://localhost:18888/
+```
+
+************************
+***Estimated Time***
+************************
+
+Estimated time for this feature is 2 - 8 hours
 
 ************************
 ***Hints and Solution***
 ************************
 
-If you are stuck and need a hint or want to see a possible solution, navigate to this document [here](/Hints-And-Solutions.md)
-
-If you think there are better hints or there are alternative or better solutions, please email me at nharwit@gmail.com
+If you need a hint or want to see a possible solution, navigate to this document [here](/Hints-And-Solution.md)
 
 ************************
 ***Coding Challenge***
 ************************
 
-You've been requested to make a hint feature for the kidsgoserver.com.
+Your task is to make a hint feature for the kidsgoserver.com
+
 For simplicity, the first version of the hint feature can just display the next correct move(s) to the user.
+
 You do NOT have to worry about displaying the next wrong move(s) to the user.  
 
 You may find exploring the website online-go.com, and the submodule code located within online-go.com useful.
@@ -28,14 +56,14 @@ You may find exploring the website online-go.com, and the submodule code located
 **Requirements**
 ************************
 
-1. Hint button in the bottom left of the screen on desktop
-2. Clicking the hint button shows a green square mark (or another way to indicate a correct move) on the Go board (Goban) where the correct next move(s) should be
+1. Create a hint button in the bottom left of the screen on desktop
+2. Clicking the hint button shows a green square mark on the Go board (Goban) where the correct next move(s) should be
 3. Clicking on the Goban when a hint is showing will automatically clear the hint mark(s)
 4. Clicking the hint button when hints are showing clears the hint mark(s)
 
 A properly implemented hint feature will work like the hint feature does on [kidsgoserver.com/](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
 
-Remember that you do not need to include the red marks for the incorrect next moves. You are only responsible for including the correct next move(s).  
+Remember that you do not need to include the red marks for the incorrect next moves. You are only responsible for including the green marks for the correct next move(s).  
 
 This was a real bug from a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
 
@@ -62,9 +90,3 @@ move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
 ```
 
 Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com/](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
-
-************************
-***Estimated Time***
-************************
-
-Estimated time for this feature is 2 - 20 hours
