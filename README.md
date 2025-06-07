@@ -7,13 +7,13 @@ Getting setup locally only takes a few minutes!
 1. Clone the repo
 
 ```
-git clone https://github.com/ScriabinOp8No12/hint-button-bug-11xdev.git
+git clone https://github.com/ScriabinOp8No12/hint-feature-11xdev.git
 ```
 
 2. Navigate to the root of the project:
 
 ```
-cd hint-button-bug-11xdev
+cd hint-feature-11xdev
 ```
 
 3. Install packages and start the frontend server:
