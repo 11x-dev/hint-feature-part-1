@@ -44,9 +44,11 @@ If you need a hint or want to see a possible solution, navigate to this document
 ***Coding Challenge***
 ************************
 
+The real codebase uses a submodule that is located at online-go.com, which includes another submodule at online-go.com/submodules/goban. To ensure nothing breaks when those submodules are updated, the code has been manually added. The main online-go.com submodule can be found at https://github.com/online-go/online-go.com
+
 Your task is to make a hint feature for the kidsgoserver.com
 
-For simplicity, the first version of the hint feature can just display the next correct move(s) to the user.
+For simplicity, the first version of the hint feature can just display the next correct move(s) to the user. 
 
 You do NOT have to worry about displaying the next wrong move(s) to the user.  
 
