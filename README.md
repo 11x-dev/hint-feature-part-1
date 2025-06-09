@@ -63,7 +63,7 @@ You may find exploring the website online-go.com, and the submodule code located
 3. Clicking on the Goban when a hint is showing will automatically clear the hint mark(s)
 4. Clicking the hint button when hints are showing clears the hint mark(s)
 
-A properly implemented hint feature will work like the hint feature does on [kidsgoserver.com/](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
+A properly implemented hint feature will work like the hint feature does on [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
 
 Remember that you do not need to include the red marks for the incorrect next moves. You are only responsible for including the green marks for the correct next move(s).  
 
@@ -91,4 +91,4 @@ Example 2: In the following example, we have the correct move tree: e5f5f4. That
 move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
 ```
 
-Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com/](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
+Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
