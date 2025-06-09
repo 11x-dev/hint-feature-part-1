@@ -62,6 +62,7 @@ You may find exploring the website online-go.com, and the submodule code located
 2. Clicking the hint button shows a green square mark on the Go board (Goban) where the correct next move(s) should be
 3. Clicking on the Goban when a hint is showing will automatically clear the hint mark(s)
 4. Clicking the hint button when hints are showing clears the hint mark(s)
+5. Navigating to a different problem/puzzle with the back/next buttons removes the hint marks
 
 A properly implemented hint feature will work like the hint feature does on [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
 
