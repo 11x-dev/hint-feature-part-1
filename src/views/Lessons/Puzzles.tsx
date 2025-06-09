@@ -72,7 +72,8 @@ export function Puzzles({
             const prevSectionPuzzles = puzzleSectionMap[prevSectionKey];
             back = `/learn-to-play/8/problems/${prevSectionKey}/${prevSectionPuzzles.length}`;
         } else {
-            back = "/learn-to-play";
+            // Pretty bad to be hard coded here, as if we add or remove pages from lesson 7, it won't go to the last page
+            back = "/learn-to-play/7/19";
         }
     }
 
@@ -91,7 +92,6 @@ export function Puzzles({
         useState<boolean>(false);
     const [hintsOn, setHintsOn] = useState(false);
 
-    console.log("hintsOn value local state", hintsOn);
     const onResize = useCallback((width, height) => {
         const goban = goban_ref.current;
         if (goban) {
@@ -186,10 +186,10 @@ export function Puzzles({
                 width: 9,
                 height: 9,
                 circle_radius: 0.45,
-                draw_top_labels: false,
-                draw_right_labels: false,
-                draw_left_labels: false,
-                draw_bottom_labels: false,
+                draw_top_labels: true,
+                draw_right_labels: true,
+                draw_left_labels: true,
+                draw_bottom_labels: true,
                 player_id: 0,
                 server_socket: null,
                 square_size: "auto",
@@ -210,7 +210,6 @@ export function Puzzles({
         const goban: Goban = goban_ref.current;
         // This triggers the same re-render that the replay button does, and we pass this down to the Module classes where the puzzles are
         content.resetGoban = () => setReplay(Math.random());
-
         content.setGoban(goban);
         content.setNext(next);
 
