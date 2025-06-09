@@ -205,7 +205,7 @@ export function Puzzles({
         ) as GobanConfig;
 
         goban_opts_ref.current = opts;
-        // console.log(opts);
+        console.log(opts);
         goban_ref.current = new GobanCanvas(opts);
         const goban: Goban = goban_ref.current;
         // This triggers the same re-render that the replay button does, and we pass this down to the Module classes where the puzzles are
