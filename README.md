@@ -1,12 +1,18 @@
 *******************
-***Hint One***
+***Hint Two***
 *******************
 
-The real time saver is realizing that the submodule "online-go.com" code already contains the exact same hint feature we are trying to build!  You can find the hint feature on the online-go.com website below, then inspect the element:
+Here is the relevant file and functions within it:
 
-https://online-go.com/puzzle/2625
+```
+online-go.com/src/views/Puzzle/Puzzle.tsx
+```
 
-If the above url no longer works, click on any of the puzzle collections from the link below:
+Key functions you'll want to mimic:
 
-https://online-go.com/puzzle
+1. showHints
+2. removeHints
+
+
+
 
