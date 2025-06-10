@@ -93,6 +93,6 @@ Example 2: In the following example, we have the correct move tree: e5f5f4. That
 move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
 ```
 
-You may find that the Goban class has some useful methods on it, espsecially related to the move tree described above!
+You may find that the Goban class has some useful methods on it!
 
 Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
