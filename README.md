@@ -6,7 +6,7 @@ The real time saver is realizing that the submodule "online-go.com" code already
 
 https://online-go.com/puzzle/2625
 
-If the above url no longer works, trying navigating to the following instead, then click on any of the puzzle collections:
+If the above url no longer works, click on any of the puzzle collections from the link below:
 
 https://online-go.com/puzzle
 
