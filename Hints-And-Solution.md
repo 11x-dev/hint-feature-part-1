@@ -1,9 +1,15 @@
-Inside your terminal, navigate to the hint or solution branch, then open up the README.md files.
+Inside your terminal, navigate to the hint-1, hint-2, or solution branch, then open up the README.md file.
 
-For a hint:
+For the first hint:
 
 ```
-git checkout hint
+git checkout hint-1
+```
+
+For a second hint:
+
+```
+git checkout hint-2
 ```
 
 For a solution:
@@ -14,10 +20,16 @@ git checkout solution
 
 Alternatively, you can also navigate to the following github branches in your browser instead:
 
-For a hint, scroll down to the README portion of this page:
+For hint-1, scroll down to the README portion of this page:
 
 ```
-https://github.com/ScriabinOp8No12/hint-feature-11xdev/tree/hint
+https://github.com/ScriabinOp8No12/hint-feature-11xdev/tree/hint-1
+```
+
+For hint-2, scroll down to the README portion of this page:
+
+```
+https://github.com/ScriabinOp8No12/hint-feature-11xdev/tree/hint-2
 ```
 
 For a solution, scroll down to the README portion of this page:
