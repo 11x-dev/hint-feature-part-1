@@ -55,10 +55,11 @@ The states and functions should look something like this after you convert them:
 
 According to the requirements on the main branch, we need to add it to the bottom left of the screen, in the bottom-graphic className portion:
 
+```
 <div className="bottom-graphic">
     <button onClick={showHint}>Hint</button>
 </div>
-     
+``` 
 
 7. Now we need to ensure the hint states are cleaned up properly like how they are implemented in the online-go.com code. Notice how the onUpdate() includes a removeHints() call:
 
