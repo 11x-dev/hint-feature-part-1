@@ -293,7 +293,7 @@ export function Puzzles({
                                 {sectionList}
                             </div>
                         </div>
-                        <div className="bottom-graphic"></div>
+                        <div className="bottom-graphic">*** ADD HINT BUTTON HERE! ***</div>
                     </div>
 
                     <div id="board-container" ref={board_container_resizer.ref}>

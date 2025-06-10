@@ -58,7 +58,7 @@ You may find exploring the website online-go.com, and the submodule code located
 **Requirements**
 ************************
 
-1. Create a hint button in the bottom left of the screen on desktop
+1. Add a hint button in the bottom left of the screen here: <div className="bottom-graphic">*** ADD HINT BUTTON HERE! ***</div>
 2. Clicking the hint button shows a green square mark on the Go board (Goban) where the correct next move(s) should be
 3. Clicking on the Goban when a hint is showing will automatically clear the hint mark(s)
 4. Clicking the hint button when hints are showing clears the hint mark(s)
