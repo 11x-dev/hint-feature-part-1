@@ -2,7 +2,7 @@
 ***Hint One***
 *******************
 
-The real time saver is realizing that the submodule "online-go.com" code already contains the exact same hint feature we are trying to build!  You may want to check out the hint feature on the online-go.com website here:
+The real time saver is realizing that the submodule "online-go.com" code already contains the exact same hint feature we are trying to build!  You can find the hint feature on the online-go.com website here, then inspect the element:
 
 https://online-go.com/puzzle/2625
 
