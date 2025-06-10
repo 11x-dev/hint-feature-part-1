@@ -77,7 +77,7 @@ This was a real bug from a real production codebase!  Feel free to use any resou
 
 The file you'll want to add code to is located at: src/views/Lessons/Puzzles.tsx
 
-The file that contains the correct move tree is located at: src/views/Lessons/Lesson8Puzzles/Capturing.tsx
+One of the files that contains move tree information is located at: src/views/Lessons/Lesson8Puzzles/Capturing.tsx
 
 In the move_tree lines, the correct move branch is in the first array, you'll need to highlight that coordinate on the Goban when the hint button is clicked.  
 
