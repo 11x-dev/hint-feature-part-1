@@ -90,8 +90,13 @@ Let's replicate this in our code!  Add removeHints() to the end of the onUpdate 
 
 8. We need to add these removeHints() calls to several other places, like when we click the back or next buttons.  If we don't add these removeHints(), then if we click hint then navigate to a new puzzle, we need to click the hint button twice to actually see the hints.  The reason is the local hint state is still set to true, so clicking the button the first time sets it to false, then we have to click a second time to set it back to true to see the hint marks on the Goban.
 
+*******************
+***Conclusion***
+*******************
 
+After getting assigned this feature to work on, I struggled initially to figure out how to use the existing methods on the Goban class to make the hints show up. I then realized that perhaps the online-go.com website had a similar hint feature already implemented, and I was pleased to find that there was indeed a hint feature already implemented.  I then found that code in the submodule, and mimicked the key functionality for the feature.  It still took a little while because I had to convert the class component structure to use the functional component structure with hooks.  
 
+Remember that sometimes similar code has already been implemented somewhere else.  It's important to think about these potential time savers and shortcuts before you dive into building the feature.  
 
-
+Nice job, this was a very tricky and time consuming feature to implement, see you on the next one! 
 
