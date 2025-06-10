@@ -1,9 +1,15 @@
-Inside your terminal, navigate to the hint or solution branch, then open up the README.md files.
+Inside your terminal, navigate to the hint-1, hint-2, or solution branch, then open up the README.md file.
 
-For a hint:
+For the first hint:
 
 ```
-git checkout hint
+git checkout hint-1
+```
+
+For a second hint:
+
+```
+git checkout hint-2
 ```
 
 For a solution:
