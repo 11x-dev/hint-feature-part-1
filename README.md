@@ -2,7 +2,7 @@
 ***Solution***
 *******************
 
-NOTE: You can view the changes required for the solution here: https://github.com/ScriabinOp8No12/hint-feature-11xdev/pull/1/files#diff-06b4443a9c3599744dedf37083f6e6b5346898eab14976e6ccce099ae3783b2c
+You can view the exact code changes needed to solve this coding challenge here: https://github.com/ScriabinOp8No12/hint-feature-11xdev/pull/1/files#diff-06b4443a9c3599744dedf37083f6e6b5346898eab14976e6ccce099ae3783b2c
 
 This branch contains the hint feature code - you can test that the functionality works as intended in your browser.   
 
