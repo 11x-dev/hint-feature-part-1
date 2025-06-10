@@ -61,26 +61,25 @@ You may find exploring the website online-go.com, and the submodule code located
 1. Add a hint button in the bottom left of the screen here: 
 ```<div className="bottom-graphic">*** ADD HINT BUTTON HERE! ***</div>```
 2. Clicking the hint button shows a green square mark on the Go board (Goban) where the correct next move(s) should be
-3. Clicking on the Goban when a hint is showing will automatically clear the hint mark(s)
-4. Clicking the hint button when hints are showing clears the hint mark(s)
-5. Navigating to a different problem with the back/next buttons when the hints were showing properly removes the hint marks
-6. When the hint button is clicked, and we navigate to a different problem with the next/back buttons, clicking the hint button ONCE shows the hints (instead of needing to click the hint button twice)
+3. Clicking on the Goban or clicking the hint button when hints are showing will remove the hint marks
+4. Navigating to a different problem with the back/next buttons when the hints were showing properly removes the hint marks
+5. When the hint button is clicked, and we navigate to a different problem with the next/back buttons, clicking the hint button ONCE shows the hints (instead of needing to click the hint button twice)
 
 A properly implemented hint feature will work like the hint feature does on [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
 
-Remember that you do not need to include the red marks for the incorrect next moves. You are only responsible for including the green marks for the correct next move(s).  
+NOTE: Remember that you do not need to include the red marks for the incorrect next moves. You are only responsible for including the green marks for the correct next move(s).  
 
 This was a real bug from a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
 
 ************************
-**Relevant Files/Code**
+**Relevant Code and examples**
 ************************
 
 The file you'll want to add code to is located at: src/views/Lessons/Puzzles.tsx
 
 The file that contains the correct move tree is located at: src/views/Lessons/Lesson8Puzzles/Capturing.tsx
 
-In the move_tree lines, the correct move branch is in the first array, you'll need to display that coordinate on the Goban when the hint button is clicked.  
+In the move_tree lines, the correct move branch is in the first array, you'll need to highlight that coordinate on the Goban when the hint button is clicked.  
 
 Example 1: Inside the Capturing.tsx file, you'll see "move_tree" within the config portion.  You'll need to highlight the g6 coordinate/intersection on the Goban when the hint button is clicked. Remember the first array is the correct move branch.
 
@@ -93,5 +92,7 @@ Example 2: In the following example, we have the correct move tree: e5f5f4. That
 ```
 move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
 ```
+
+You may find that the Goban class has some useful methods on it!
 
 Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
