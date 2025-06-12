@@ -83,7 +83,7 @@ Let's replicate this in our code!  Add removeHints() to the end of the onUpdate 
         const move_string = mvs.map((p) => prettyCoordinates(p.x, p.y, goban.height)).join(",");
         console.log("Move string: ", move_string);
         // Add this removeHints method here so we clear the hints when our Goban updates, 
-        // this ensures the hint marks are gone when we click on the Goban, which updates the Goban (it appears it works without this line)
+        // this ensures the hint marks are gone when we click on the Goban, which updates the Goban (it appears to work without this line)
         removeHints(); 
     };
 ```
