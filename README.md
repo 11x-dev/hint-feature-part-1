@@ -1,23 +1,32 @@
 *******************
-***Solution***
+**Solution**
 *******************
 
 You can view the exact code changes needed to solve this coding challenge here: https://github.com/ScriabinOp8No12/hint-feature-11xdev/pull/1/files#diff-06b4443a9c3599744dedf37083f6e6b5346898eab14976e6ccce099ae3783b2c
 
-This branch contains the hint feature code - you can test that the functionality works as intended in your browser.   
+This branch contains the hint feature code changes - you can test that the functionality works as intended in your browser.   
 
-1. The easiest and quickest way to solve this coding challenge is to realize that the submodule code (online-go.com) has already implemented the hint feature we want to implement!  Otherwise you'll have to spend many hours looking through and testing the available methods on the Goban class.  
+1. The easiest and quickest way to solve this coding challenge is to realize that the submodule code (online-go.com) already contains the hint feature we want to implement!  Otherwise you'll have to spend many hours looking through and testing the available methods on the Goban class.  
 
 Let's navigate to the online-go.com website, and look for the hint button.
 
 2. Navigate to the following link and click on any of the puzzles. Now find the hint button, right click it, then click inspect.  We will search for this in our code, so we can replicate the logic.
 
+```
 https://online-go.com/puzzle
+```
 
 Or navigate to the following puzzle:
-https://online-go.com/puzzle/2625
 
-3. The class won't help us much since it's either empty or "active", but we know that the button contains the text "Hint", let's search for Hint in our codebase.  We notice a file "Puzzle.tsx" located at online-go.com/src/views/Puzzle that looks promising!
+```
+https://online-go.com/puzzle/2625
+```
+
+3. The class won't help us much since it's either empty or "active", but we know that the button contains the text "Hint", let's search for Hint in our codebase.  We notice a file in our integrate submodule code that looks promising, "Puzzle.tsx": 
+
+```
+online-go.com/src/views/Puzzle/Puzzle.tsx
+```
 
 4. We see two important functions we want to replicate, removeHints and showHint.  Unfortunately, this code was written before hooks like useState/useRef became available in React, so we will have to convert these class component patterns to functional component patterns using hooks.  
 
@@ -26,7 +35,7 @@ https://online-go.com/puzzle/2625
 The states and functions should look something like this after you convert them:
 
 ```
-    // near the top of the component with the other states, set to false initially so we don't see any hints by default
+    // near the top of the component with the other states, set hintsOn's state to false initially so we don't see any hints by default
     const [hintsOn, setHintsOn] = useState(false); 
 
     const removeHints = () => {
@@ -91,7 +100,7 @@ Let's replicate this in our code!  Add removeHints() to the end of the onUpdate 
 8. We need to add these removeHints() calls to several other places, like when we click the back or next buttons.  If we don't add these removeHints(), then if we click hint then navigate to a new puzzle, we need to click the hint button twice to actually see the hints.  The reason is the local hint state is still set to true, so clicking the button the first time sets it to false, then we have to click a second time to set it back to true to see the hint marks on the Goban.
 
 *******************
-***Conclusion***
+**Conclusion**
 *******************
 
 After getting assigned this feature to work on, I struggled initially to figure out how to use the existing methods on the Goban class to make the hints show up. I then realized that perhaps the online-go.com website had a similar hint feature already implemented, and I was pleased to find that there was indeed a hint feature already implemented.  I then found that code in the submodule, and mimicked the key functionality for the feature.  It still took a little while because I had to convert the class component structure to use the functional component structure with hooks.  
