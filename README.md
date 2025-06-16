@@ -22,7 +22,7 @@ Or navigate to the following puzzle:
 https://online-go.com/puzzle/2625
 ```
 
-3. The class won't help us much since it's either empty or "active", but we know that the button contains the text "Hint", let's search for Hint in our codebase.  We notice a file in our integrate submodule code that looks promising, "Puzzle.tsx": 
+3. The class won't help us much since it's either empty or "active", but we know that the button contains the text "Hint", let's search for Hint in our codebase.  We notice a file in our integrated submodule code that looks promising, "Puzzle.tsx": 
 
 ```
 online-go.com/src/views/Puzzle/Puzzle.tsx
