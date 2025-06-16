@@ -1,5 +1,5 @@
 *******************
-***Hint One***
+**Hint One**
 *******************
 
 The real time saver is realizing that the submodule "online-go.com" code already contains the exact same hint feature we are trying to build!  You can find the hint feature on the online-go.com website below, then inspect the element:
