@@ -1,5 +1,5 @@
 *******************
-***Initial Setup***
+**Initial Setup**
 *******************
 
 Getting setup locally only takes a few minutes!
@@ -29,19 +29,19 @@ http://localhost:18888/
 ```
 
 ************************
-***Estimated Time***
+**Estimated Time**
 ************************
 
 Estimated time for this feature is 2 - 8 hours
 
 ************************
-***Hints and Solution***
+**Hints and Solution**
 ************************
 
 If you need a hint or want to see a possible solution, navigate to this document [here](/Hints-And-Solution.md)
 
 ************************
-***Coding Challenge***
+**Coding Challenge**
 ************************
 
 The real codebase uses a submodule that is located at online-go.com, which includes another submodule at online-go.com/submodules/goban. To ensure nothing breaks when those submodules are updated, the code has been manually added. The main online-go.com submodule can be found at https://github.com/online-go/online-go.com
@@ -69,8 +69,6 @@ A properly implemented hint feature will work like the hint feature does on [kid
 
 NOTE: Remember that you do not need to include the red marks for the incorrect next moves. You are only responsible for including the green marks for the correct next move(s).  
 
-This was a real bug from a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
-
 ************************
 **Relevant Code and examples**
 ************************
@@ -93,6 +91,6 @@ Example 2: In the following example, we have the correct move tree: e5f5f4. That
 move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
 ```
 
-You may find that the Goban class has some useful methods on it!
-
 Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
+
+This was a real feature request for a real production codebase!  Feel free to use any resources you want on this coding challenge, have fun!  
