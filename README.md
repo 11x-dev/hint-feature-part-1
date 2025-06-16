@@ -32,7 +32,7 @@ http://localhost:18888/
 **Estimated Time**
 ************************
 
-Estimated time for this feature is 2 - 8 hours
+Estimated time for this feature is 2 - 10 hours
 
 ************************
 **Hints and Solution**
