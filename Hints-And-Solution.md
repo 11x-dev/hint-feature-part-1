@@ -17,21 +17,3 @@ For a solution:
 ```
 git checkout solution
 ```
-
-Alternatively, you can also navigate to the following github branches in your browser instead:
-
-For hint-1, scroll down to the README portion of this page:
-
-```
-https://github.com/ScriabinOp8No12/hint-feature-11xdev/tree/hint-1
-```
-
-For hint-2, scroll down to the README portion of this page:
-
-```
-https://github.com/ScriabinOp8No12/hint-feature-11xdev/tree/hint-2
-```
-
-For a solution, scroll down to the README portion of this page:
-
-https://github.com/ScriabinOp8No12/hint-feature-11xdev/tree/solution

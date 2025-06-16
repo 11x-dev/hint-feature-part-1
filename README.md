@@ -1,14 +1,14 @@
 *******************
-***Hint Two***
+**Hint Two**
 *******************
 
-Here is the relevant file and functions within it:
+Here is the relevant file:
 
 ```
 online-go.com/src/views/Puzzle/Puzzle.tsx
 ```
 
-Key functions you'll want to mimic:
+Here are the key functions you'll want to replicate:
 
 1. showHints
 2. removeHints
