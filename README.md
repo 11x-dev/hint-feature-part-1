@@ -103,8 +103,6 @@ Example 2: In the following example, we have the correct move tree: e5f5f4. That
 move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
 ```
 
-Again, please try the hint feature on the website if you are confused on what you are supposed to do: [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
-
 This challenge is based on a real feature from a production codebase.  Feel free to use any resources you like while solving it.
 
 Enjoyed the challenge? Give this repo a ⭐️ to help others find it too!
