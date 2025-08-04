@@ -4,7 +4,7 @@
 
 You can view the exact code changes needed to solve this coding challenge here: https://github.com/ScriabinOp8No12/hint-feature-11xdev/pull/1/files#diff-06b4443a9c3599744dedf37083f6e6b5346898eab14976e6ccce099ae3783b2c
 
-This branch contains the hint feature code changes - you can test that the functionality works as intended in your browser.   
+This branch contains the solution code changes - you can test that the functionality works as intended in your browser.   
 
 1. The easiest and quickest way to solve this coding challenge is to realize that the submodule code (online-go.com) already contains the hint feature we want to implement!  Otherwise you'll have to spend many hours looking through and testing the available methods on the Goban class.  
 
