@@ -90,6 +90,8 @@ export function Puzzles({
     const [showAxotol, setShowAxotol]: [boolean, (x: boolean) => void] = useState<boolean>(false);
     const [hidePlayButton, setHidePlayButton]: [boolean, (x: boolean) => void] =
         useState<boolean>(false);
+    const [hintsOn, setHintsOn] = useState(false);
+
     const onResize = useCallback((width, height) => {
         const goban = goban_ref.current;
         if (goban) {
@@ -123,6 +125,26 @@ export function Puzzles({
             {value}
         </div>
     ));
+
+    const removeHints = () => {
+        const goban: Goban = goban_ref.current;
+        const move = goban.engine.cur_move;
+        move.branches.forEach((item) => goban.deleteCustomMark(item.x, item.y, "hint", true));
+        setHintsOn(false);
+    };
+
+    const showHint = () => {
+        const goban: Goban = goban_ref.current;
+        if (hintsOn) {
+            removeHints();
+        } else if (!goban.engine.cur_move.correct_answer) {
+            const branches = goban.engine.cur_move.findBranchesWithCorrectAnswer();
+            branches.forEach((branch) => {
+                goban.setCustomMark(branch.x, branch.y, "hint", true);
+            });
+            setHintsOn(true);
+        }
+    };
 
     useEffect(() => {
         console.log("Constructing puzzle", displaySectionName, puzzleNumber);
@@ -236,6 +258,7 @@ export function Puzzles({
             );
             const move_string = mvs.map((p) => prettyCoordinates(p.x, p.y, goban.height)).join(",");
             console.log("Move string: ", move_string);
+            removeHints();
         };
 
         goban.on("update", onUpdate);
@@ -293,7 +316,9 @@ export function Puzzles({
                                 {sectionList}
                             </div>
                         </div>
-                        <div className="bottom-graphic">*** ADD HINT BUTTON HERE! ***</div>
+                        <div className="bottom-graphic">
+                            <button onClick={showHint}>Hint</button>
+                        </div>
                     </div>
 
                     <div id="board-container" ref={board_container_resizer.ref}>
@@ -317,18 +342,33 @@ export function Puzzles({
                         <div className="top-spacer" />
                         <Racoon hover />
                         <div className="landscape-bottom-buttons">
-                            <Link to={back} className="game-button-container">
+                            <Link
+                                to={back}
+                                className="game-button-container"
+                                onClick={() => {
+                                    removeHints();
+                                }}
+                            >
                                 <span className="stone-button-left" />
                                 <span className="button-text">Back</span>
                             </Link>
                             <span
                                 className="game-button-container"
-                                onClick={() => setReplay(Math.random())}
+                                onClick={() => {
+                                    setReplay(Math.random());
+                                    removeHints();
+                                }}
                             >
                                 <span className="stone-button-refresh" />
                                 <span className="button-text">Replay</span>
                             </span>
-                            <Link to={next} className="game-button-container">
+                            <Link
+                                to={next}
+                                className="game-button-container"
+                                onClick={() => {
+                                    removeHints();
+                                }}
+                            >
                                 <span className="stone-button-right" />
                                 <span className="button-text">next</span>
                             </Link>
@@ -338,7 +378,13 @@ export function Puzzles({
 
                 <div className="portrait-bottom-buttons">
                     <div className="left">
-                        <Link to={back} className="game-button-container">
+                        <Link
+                            to={back}
+                            className="game-button-container"
+                            onClick={() => {
+                                removeHints();
+                            }}
+                        >
                             <span className="stone-button-left" />
                             <span className="button-text">Back</span>
                         </Link>
@@ -349,7 +395,13 @@ export function Puzzles({
                     </div>
 
                     <div className="right">
-                        <Link to={next} className="game-button-container">
+                        <Link
+                            to={next}
+                            className="game-button-container"
+                            onClick={() => {
+                                removeHints();
+                            }}
+                        >
                             <span className="stone-button-right" />
                             <span className="button-text">Next</span>
                         </Link>
@@ -360,7 +412,13 @@ export function Puzzles({
             <BackButton onClick={() => navigate("/learn-to-play")} />
 
             <div id="portrait-replay">
-                <span className="stone-button-refresh" onClick={() => setReplay(Math.random())} />
+                <span
+                    className="stone-button-refresh"
+                    onClick={() => {
+                        setReplay(Math.random());
+                        removeHints();
+                    }}
+                />
             </div>
         </>
     );

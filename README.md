@@ -1,108 +1,111 @@
 *******************
-**Initial Setup**
+**Solution**
 *******************
 
-Getting setup locally takes less than 5 minutes!
+You can view the exact code changes needed to solve this coding challenge here: https://github.com/ScriabinOp8No12/hint-feature-11xdev/pull/1/files#diff-06b4443a9c3599744dedf37083f6e6b5346898eab14976e6ccce099ae3783b2c
 
-Requirements:
-- Node.js version 20+ (check with: node -v)
-- Yarn package manager (install with: npm install -g yarn)
+This branch contains the solution code changes - you can test that the functionality works as intended in your browser.   
+
+1. The easiest and quickest way to solve this coding challenge is to realize that the submodule code (online-go.com) already contains the hint feature we want to implement!  Otherwise you'll have to spend many hours looking through and testing the available methods on the Goban class.  
+
+Let's navigate to the online-go.com website, and look for the hint button.
+
+2. Navigate to the following link and click on any of the puzzles. Now find the hint button, right click it, then click inspect.  We will search for this in our code, so we can replicate the logic.
+
+```
+https://online-go.com/puzzle
+```
+
+Or navigate to the following puzzle:
+
+```
+https://online-go.com/puzzle/2625
+```
+
+3. The class won't help us much since it's either empty or "active", but we know that the button contains the text "Hint", let's search for Hint in our codebase.  We notice a file in our integrated submodule code that looks promising, "Puzzle.tsx": 
+
+```
+online-go.com/src/views/Puzzle/Puzzle.tsx
+```
+
+4. We see two important functions we want to replicate, removeHints and showHint.  Unfortunately, this code was written before hooks like useState/useRef became available in React, so we will have to convert these class component patterns to functional component patterns using hooks.  
+
+5. After we convert these, we also need to ensure we have access to the goban from the Goban class.
+
+The states and functions should look something like this after you convert them:
+
+```
+    // near the top of the component with the other states, set hintsOn's state to false initially so we don't see any hints by default
+    const [hintsOn, setHintsOn] = useState(false); 
+
+    const removeHints = () => {
+        const goban: Goban = goban_ref.current;
+        const move = goban.engine.cur_move;
+        move.branches.forEach((item) => goban.deleteCustomMark(item.x, item.y, "hint", true));
+        setHintsOn(false);
+    };
+
+    const showHint = () => {
+        const goban: Goban = goban_ref.current;
+        if (hintsOn) {
+            removeHints();
+        } else if (!goban.engine.cur_move.correct_answer) {
+            const branches = goban.engine.cur_move.findBranchesWithCorrectAnswer();
+            branches.forEach((branch) => {
+                goban.setCustomMark(branch.x, branch.y, "hint", true);
+            });
+            setHintsOn(true);
+        }
+    };
+
+```
+
+6. Let's add the hint button, where it executes our showHint function when clicked so we can test the functionality!
+
+According to the requirements on the main branch, we need to add it to the bottom left of the screen, in the bottom-graphic className portion:
+
+```
+<div className="bottom-graphic">
+    <button onClick={showHint}>Hint</button>
+</div>
+``` 
+
+7. Now we need to ensure the hint states are cleaned up properly like how they are implemented in the online-go.com code. Notice how the onUpdate() includes a removeHints() call:
+
+```
+    onUpdate() {
+        this.removeHints();
+        this.sync_state();
+        this.forceUpdate();
+    }
+```
+
+Let's replicate this in our code!  Add removeHints() to the end of the onUpdate function, like this:
+
+```
+    const onUpdate = () => {
+        const mvs = decodeMoves(
+            goban.engine.cur_move.getMoveStringToThisPoint(),
+            goban.width,
+            goban.height,
+        );
+        const move_string = mvs.map((p) => prettyCoordinates(p.x, p.y, goban.height)).join(",");
+        console.log("Move string: ", move_string);
+        // Add this removeHints method here so we clear the hints when our Goban updates, 
+        // this ensures the hint marks are gone when we click on the Goban, which updates the Goban (it appears to work without this line)
+        removeHints(); 
+    };
+```
+
+8. We need to add these removeHints() calls to several other places, like when we click the back or next buttons.  If we don't add these removeHints(), then if we click hint then navigate to a new puzzle, we need to click the hint button twice to actually see the hints.  The reason is the local hint state is still set to true, so clicking the button the first time sets it to false, then we have to click a second time to set it back to true to see the hint marks on the Goban.
 
 *******************
+**Conclusion**
+*******************
 
-1. Open a terminal and clone the repo:
+After getting assigned this feature to work on, I struggled initially to figure out how to use the existing methods on the Goban class to make the hints show up. I then realized that perhaps the online-go.com website had a similar hint feature already implemented, and I was pleased to find that there was indeed a hint feature already implemented.  I then found that code in the submodule, and mimicked the key functionality for the feature.  It still took a little while because I had to convert the class component structure to use the functional component structure with hooks.  
 
-```
-git clone https://github.com/11x-dev/hint-feature-part-1.git
-```
+Remember that sometimes similar code has already been implemented somewhere else.  It's important to think about these potential time savers and shortcuts before you dive into building the feature.  
 
-2. Navigate to the root of the project:
+Nice job, this was a very tricky and time consuming feature to implement, see you on the next one! 
 
-```
-cd hint-feature-part-1
-```
-
-3. Open the project in your IDE, then return to your original terminal for step 4:
-
-```
-code .
-```
-
-4. Install packages and start the frontend server:
-
-```
-yarn install && npm run dev
-```
-
-5. View the website in your browser:
-
-```
-http://localhost:18888/
-```
-
-************************
-**Estimated Time**
-************************
-
-Estimated time for this feature is 2 - 10 hours
-
-************************
-**Hints and Solution**
-************************
-
-If you need a hint or want to see a possible solution, navigate to this document [here](/Hints-And-Solution.md)
-
-************************
-**Coding Challenge**
-************************
-
-The real codebase uses a submodule that is located at online-go.com, which includes another submodule at online-go.com/submodules/goban. To ensure nothing breaks when those submodules are updated, the code has been manually added. The main online-go.com submodule can be found at https://github.com/online-go/online-go.com
-
-Your task is to make a hint feature for the kidsgoserver.com
-
-For simplicity, the first version of the hint feature can just display the next correct move(s) to the user. 
-
-You do NOT have to worry about displaying the next wrong move(s) to the user.  
-
-You may find exploring the website online-go.com, and the submodule code located within online-go.com useful.
-
-************************
-**Requirements**
-************************
-
-1. Add a hint button in the bottom left of the screen here: 
-```<div className="bottom-graphic">*** ADD HINT BUTTON HERE! ***</div>```
-2. Clicking the hint button shows a green square mark on the Go board (Goban) where the correct next move(s) should be
-3. Clicking on the Goban or clicking the hint button when hints are showing will remove the hint marks
-4. Navigating to a different problem with the back/next buttons when the hints were showing properly removes the hint marks
-5. When the hint button is clicked, and we navigate to a different problem with the next/back buttons, clicking the hint button ONCE shows the hints (instead of needing to click the hint button twice)
-
-A properly implemented hint feature will work like the hint feature does on [kidsgoserver.com](https://kidsgoserver.com/learn-to-play/8/problems/capturing/1)
-
-NOTE: Remember that you do not need to include the red marks for the incorrect next moves. You are only responsible for including the green marks for the correct next move(s).  
-
-************************
-**Relevant Code and examples**
-************************
-
-The file you'll want to add code to is located at: src/views/Lessons/Puzzles.tsx
-
-One of the files that contains move tree information is located at: src/views/Lessons/Lesson8Puzzles/Capturing.tsx
-
-In the move_tree lines, the correct move branch is in the first array, you'll need to highlight that coordinate on the Goban when the hint button is clicked.  
-
-Example 1: Inside the Capturing.tsx file, you'll see "move_tree" within the config portion.  You'll need to highlight the g6 coordinate/intersection on the Goban when the hint button is clicked. Remember the first array is the correct move branch.
-
-```
-move_tree: this.makePuzzleMoveTree(["g6"], ["f5g6"], 9, 9),
-```
-
-Example 2: In the following example, we have the correct move tree: e5f5f4. That means if the hint button is clicked, we want to show a mark on e5, the computer will then automatically play the next move in the move tree, which is f5. All marks should now be cleared from the Goban. Then if we click the hint button again, it will need to show f4 as the next hint.  
-
-```
-move_tree: this.makePuzzleMoveTree(["e5f5f4"], ["f5e5"], 9, 9),
-```
-
-This challenge is based on a real feature from a production codebase.  Feel free to use any resources you like while solving it.
-
-Enjoyed the challenge? Give this repo a ⭐️ to help others find it too!
